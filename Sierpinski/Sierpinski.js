@@ -11,10 +11,9 @@ function main() {
     }
     const contexto = canvas.getContext("2d");
 
-
+    let prim = new Triangulo(250,20,100,280,400,280,"purple",null,contexto);
     prim.dibujar();
-    let prim = new Triangulo(250,20,100,280,400,280,"black",null,contexto);
-    
+
     let slider = document.getElementById("myRange");
     let output = document.getElementById("demo");
     output.innerHTML = slider.value;
