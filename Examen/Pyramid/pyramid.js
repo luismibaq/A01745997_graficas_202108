@@ -157,7 +157,7 @@ function createPyramid(gl, translation, rotationAxis)
     }
     verts = tempv;
     let temp = [];
-    for (let j = 0; j < 4; j++){
+    for (let j = 0; j < 6; j++){
         temp = [];
         for(let i = 0; i < verts.length/9;i++){
             let p1x = verts[i*9];
@@ -213,91 +213,13 @@ function createPyramid(gl, translation, rotationAxis)
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
 
-    // Color data
-    let faceColors = [
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1],
-        [Math.random(), Math.random(), Math.random(), 1]
-    ];
-
     let vertexColors = [];
+
     for(let j = 0; j < verts.length; j += 3){
         let color = [Math.random(), Math.random(), Math.random(), 1];
         for (let j=0; j < 3; j++)
             vertexColors.push(...color);
     }
-    verts.forEach(color =>{
-        let color = [Math.random(), Math.random(), Math.random(), 1];
-        for (let j=0; j < 3; j++)
-            vertexColors.push(...color);
-    });
 
     let colorBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
