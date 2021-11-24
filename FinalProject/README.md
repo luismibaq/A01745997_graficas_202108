@@ -1,7 +1,4 @@
 # Graficas_Proyect
-## A01746585 Jose Antonio Vazquez Gabian
-## A01745997 Luis Miguel Baqueiro Vallejo
-## A01374561 Jose Francisco Murillo Lozano
 
 # Proyecto:
 
